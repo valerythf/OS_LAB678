@@ -1,0 +1,107 @@
+valery@valeryTF:~/OS_LAB6/build$ ./server
+trying 49152 ok
+IN_PORT ID = 49152
+trying 49153 ok
+BRIDGE ID = 49153
+> create 1 -1
+trying 49152
+trying 49153
+trying 49154 ok
+FRONT_IN_PORT ID = 49154
+trying 49155 ok
+FRONT_PING_PORT ID = 49155
+Message 49154 49155 is sent to 49153
+OUT SOCKET FOR TIMER ID = 49154
+> Message (front_out_port) 49152 is received from 49153
+trying 49156 ok
+BRIDGE ID = 49156
+OK: 4351
+trying 49157 ok
+TIMER SOCKET ID = 49157
+create 5 1
+> trying 49158 ok
+BACK_IN ID = 49158
+trying 49152
+trying 49153
+trying 49154
+trying 49155
+trying 49156
+trying 49157
+trying 49158
+trying 49159 ok
+FRONT_IN_PORT ID = 49159
+trying 49160 ok
+FRONT_PING_PORT ID = 49160
+Message 49159 49160 is sent to 49156
+im in fork
+Message (front_out_port) 49158 is received from 49156
+trying 49161 ok
+BRIDGE ID = 49161
+trying 49162 ok
+TIMER SOCKET ID = 49162
+create 10 5
+> trying 49163 ok
+BACK_IN ID = 49163
+trying 49152
+trying 49153
+trying 49154
+trying 49155
+trying 49156
+trying 49157
+trying 49158
+trying 49159
+trying 49160
+trying 49161
+trying 49162
+trying 49163
+trying 49164 ok
+FRONT_IN_PORT ID = 49164
+trying 49165 ok
+FRONT_PING_PORT ID = 49165
+Message 49164 49165 is sent to 49161
+im in fork
+Message (front_out_port) 49163 is received from 49161
+trying 49166 ok
+BRIDGE ID = 49166
+trying 49167 ok
+TIMER SOCKET ID = 49167
+exec 5 start 10000
+im in client's start
+> TIMER CONNECTED TO ID = 49162
+REQ_SOCK CONNECTED TO ID = 49159
+im timer
+message (START) sent to adress 49162
+i get message
+action = 6 timerID is  5
+OK: timer 5 started
+exec 5 time
+> im in client's time
+trying to send msg
+msg = 1
+i get message
+action = 8 timerID is  5
+im in timer's time
+OK: 9645 left
+exec 10 start 10000OK: timer out
+ the timerID =  5  action is ==  10message was sent
+im in client's done
+message (DONE) was sent to adress = 49162
+i get message
+action = 1 timerID is  5
+OK: timer 5 closed
+
+im in client's start
+> TIMER CONNECTED TO ID = 49167
+REQ_SOCK CONNECTED TO ID = 49164
+im timer
+message (START) sent to adress 49167
+i get message
+action = 6 timerID is  10
+OK: timer 10 started
+exec 10 stop
+> i get message
+action = 7 timerID is  10
+OK: Timer 10 stopped
+terminate called after throwing an instance of 'zmqpp::zmq_internal_exception'
+  what():  Context was terminated
+Aborted (core dumped)
